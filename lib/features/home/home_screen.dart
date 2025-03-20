@@ -17,8 +17,7 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
-    with AutomaticKeepAliveClientMixin {
+class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMixin {
   final cubit = getIt.get<HomeCubit>();
 
   @override

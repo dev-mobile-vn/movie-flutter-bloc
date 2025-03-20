@@ -14,16 +14,13 @@ part 'language_bloc.freezed.dart';
 
 class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
   LanguageBloc() : super(const LanguageState()) {
-
     on<_GetLanguages>((event, emit) async {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       String locale = prefs.getString('locale')!;
-      emit(state.copyWith(
-        languages: languages,
-        locale: locale,
-        selectedLocale: locale
-      ));
-
+      emit(
+        state.copyWith(
+            languages: languages, locale: locale, selectedLocale: locale),
+      );
     });
 
     on<_OnChangeLanguage>((event, emit) {
@@ -36,6 +33,5 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
       List<String> locale = state.selectedLocale.split('_');
       getIt.get<AppCubit>().changeLocale(Locale(locale[0], locale[1]));
     });
-
   }
 }

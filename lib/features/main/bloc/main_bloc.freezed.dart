@@ -232,6 +232,7 @@ abstract class _OnChangePage implements MainEvent {
 /// @nodoc
 mixin _$MainState {
   int get index => throw _privateConstructorUsedError;
+  PageController get pageController => throw _privateConstructorUsedError;
 
   /// Create a copy of MainState
   /// with the given fields replaced by the non-null parameter values.
@@ -245,7 +246,7 @@ abstract class $MainStateCopyWith<$Res> {
   factory $MainStateCopyWith(MainState value, $Res Function(MainState) then) =
       _$MainStateCopyWithImpl<$Res, MainState>;
   @useResult
-  $Res call({int index});
+  $Res call({int index, PageController pageController});
 }
 
 /// @nodoc
@@ -264,12 +265,17 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
   @override
   $Res call({
     Object? index = null,
+    Object? pageController = null,
   }) {
     return _then(_value.copyWith(
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
+      pageController: null == pageController
+          ? _value.pageController
+          : pageController // ignore: cast_nullable_to_non_nullable
+              as PageController,
     ) as $Val);
   }
 }
@@ -282,7 +288,7 @@ abstract class _$$MainStateImplCopyWith<$Res>
       __$$MainStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int index});
+  $Res call({int index, PageController pageController});
 }
 
 /// @nodoc
@@ -299,12 +305,17 @@ class __$$MainStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? index = null,
+    Object? pageController = null,
   }) {
     return _then(_$MainStateImpl(
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
+      pageController: null == pageController
+          ? _value.pageController
+          : pageController // ignore: cast_nullable_to_non_nullable
+              as PageController,
     ));
   }
 }
@@ -312,15 +323,18 @@ class __$$MainStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MainStateImpl extends _MainState {
-  const _$MainStateImpl({this.index = 0}) : super._();
+  const _$MainStateImpl({this.index = 0, required this.pageController})
+      : super._();
 
   @override
   @JsonKey()
   final int index;
+  @override
+  final PageController pageController;
 
   @override
   String toString() {
-    return 'MainState(index: $index)';
+    return 'MainState(index: $index, pageController: $pageController)';
   }
 
   @override
@@ -328,11 +342,13 @@ class _$MainStateImpl extends _MainState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MainStateImpl &&
-            (identical(other.index, index) || other.index == index));
+            (identical(other.index, index) || other.index == index) &&
+            (identical(other.pageController, pageController) ||
+                other.pageController == pageController));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, index);
+  int get hashCode => Object.hash(runtimeType, index, pageController);
 
   /// Create a copy of MainState
   /// with the given fields replaced by the non-null parameter values.
@@ -344,11 +360,15 @@ class _$MainStateImpl extends _MainState {
 }
 
 abstract class _MainState extends MainState {
-  const factory _MainState({final int index}) = _$MainStateImpl;
+  const factory _MainState(
+      {final int index,
+      required final PageController pageController}) = _$MainStateImpl;
   const _MainState._() : super._();
 
   @override
   int get index;
+  @override
+  PageController get pageController;
 
   /// Create a copy of MainState
   /// with the given fields replaced by the non-null parameter values.

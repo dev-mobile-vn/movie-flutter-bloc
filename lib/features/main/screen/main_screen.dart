@@ -10,26 +10,9 @@ import '../../explore/presentation/explore_screen.dart';
 import '../../home/home_screen.dart';
 import '../../my_list/my_list_screen.dart';
 import '../../profile/profile_screen.dart';
-class MainScreen extends StatefulWidget {
+
+class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
-
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
-  late PageController _pageController;
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController(initialPage: 0);
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
       child: BlocConsumer<MainBloc, MainState>(builder: (cts, state) {
         return Scaffold(
           body: PageView(
-            controller: _pageController,
+            controller: state.pageController,
             physics: const NeverScrollableScrollPhysics(),
             children: const [
               HomeScreen(),
@@ -80,7 +63,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
         );
       }, listener: (ctx, state) {
-        _pageController.jumpToPage(state.index);
+        state.pageController.jumpToPage(state.index);
       }),
     );
   }

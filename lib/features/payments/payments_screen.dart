@@ -16,9 +16,8 @@ class PaymentsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PaymentsBloc bloc = getIt.get();
     return BlocProvider<PaymentsBloc>(
-      create: (_) => bloc,
+      create: (_) => getIt.get<PaymentsBloc>(),
       child: Scaffold(
         appBar: CustomAppBar(
           title: S.of(context).title_payment,
