@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie/core/common/enums/menu_type.dart';
+import 'package:movie/core/common/resource/app_assets.dart';
 import 'package:movie/core/common/utils/bottom_sheet_utils.dart';
 import 'package:movie/features/profile/widgets/avatar_profile.dart';
 import '../../../../core/common/widgets/svg_widget.dart';
@@ -19,7 +20,7 @@ class ProfileScreen extends StatelessWidget {
       create: (context) => bloc,
       child: Scaffold(
         appBar: AppBar(
-          leading: const SvgWidget(ic: 'assets/icons/ic_logo.svg'),
+          leading: const SvgWidget(ic: AppAssets.ic_logo_svg),
         ),
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),

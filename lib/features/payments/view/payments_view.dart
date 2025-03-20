@@ -29,8 +29,7 @@ class PaymentsView extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
-          Expanded(
-              child: BlocBuilder<PaymentsBloc, PaymentsState>(
+          Expanded(child: BlocBuilder<PaymentsBloc, PaymentsState>(
             buildWhen: (previous, current) =>
                 previous.payments != current.payments,
             bloc: bloc..add(PaymentsEvent.initData(arg)),

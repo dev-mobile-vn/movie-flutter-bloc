@@ -17,7 +17,6 @@ class PostCommentsScreen extends StatefulWidget {
 }
 
 class _PostCommentsScreenState extends State<PostCommentsScreen> {
-
   // late CommentBlocCubit cubit;
   // @override
   // void initState() {
@@ -28,7 +27,16 @@ class _PostCommentsScreenState extends State<PostCommentsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return CircularProgressIndicator();
+    return Scaffold(
+      extendBody: true,
+      resizeToAvoidBottomInset: true,
+      appBar: AppBar(
+          centerTitle: true,
+          title: Text(
+            'Reviews film',
+            style: context.titleLarge,
+          )),
+    );
     // return Scaffold(
     //   appBar: AppBar(
     //     centerTitle: true,
