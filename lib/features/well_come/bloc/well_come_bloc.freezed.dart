@@ -18,39 +18,51 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$WellComeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int index) onPageView,
-    required TResult Function(String router) onNavigate,
+    required TResult Function() onInit,
+    required TResult Function(int position) onPageView,
+    required TResult Function() onGetStarted,
+    required TResult Function() onSignIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int index)? onPageView,
-    TResult? Function(String router)? onNavigate,
+    TResult? Function()? onInit,
+    TResult? Function(int position)? onPageView,
+    TResult? Function()? onGetStarted,
+    TResult? Function()? onSignIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int index)? onPageView,
-    TResult Function(String router)? onNavigate,
+    TResult Function()? onInit,
+    TResult Function(int position)? onPageView,
+    TResult Function()? onGetStarted,
+    TResult Function()? onSignIn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_OnInit value) onInit,
     required TResult Function(_OnPageView value) onPageView,
-    required TResult Function(_OnNavigate value) onNavigate,
+    required TResult Function(_OnGetStarted value) onGetStarted,
+    required TResult Function(_OnSignIn value) onSignIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnInit value)? onInit,
     TResult? Function(_OnPageView value)? onPageView,
-    TResult? Function(_OnNavigate value)? onNavigate,
+    TResult? Function(_OnGetStarted value)? onGetStarted,
+    TResult? Function(_OnSignIn value)? onSignIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnInit value)? onInit,
     TResult Function(_OnPageView value)? onPageView,
-    TResult Function(_OnNavigate value)? onNavigate,
+    TResult Function(_OnGetStarted value)? onGetStarted,
+    TResult Function(_OnSignIn value)? onSignIn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -78,12 +90,129 @@ class _$WellComeEventCopyWithImpl<$Res, $Val extends WellComeEvent>
 }
 
 /// @nodoc
+abstract class _$$OnInitImplCopyWith<$Res> {
+  factory _$$OnInitImplCopyWith(
+          _$OnInitImpl value, $Res Function(_$OnInitImpl) then) =
+      __$$OnInitImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnInitImplCopyWithImpl<$Res>
+    extends _$WellComeEventCopyWithImpl<$Res, _$OnInitImpl>
+    implements _$$OnInitImplCopyWith<$Res> {
+  __$$OnInitImplCopyWithImpl(
+      _$OnInitImpl _value, $Res Function(_$OnInitImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of WellComeEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$OnInitImpl implements _OnInit {
+  const _$OnInitImpl();
+
+  @override
+  String toString() {
+    return 'WellComeEvent.onInit()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OnInitImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onInit,
+    required TResult Function(int position) onPageView,
+    required TResult Function() onGetStarted,
+    required TResult Function() onSignIn,
+  }) {
+    return onInit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onInit,
+    TResult? Function(int position)? onPageView,
+    TResult? Function()? onGetStarted,
+    TResult? Function()? onSignIn,
+  }) {
+    return onInit?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onInit,
+    TResult Function(int position)? onPageView,
+    TResult Function()? onGetStarted,
+    TResult Function()? onSignIn,
+    required TResult orElse(),
+  }) {
+    if (onInit != null) {
+      return onInit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnInit value) onInit,
+    required TResult Function(_OnPageView value) onPageView,
+    required TResult Function(_OnGetStarted value) onGetStarted,
+    required TResult Function(_OnSignIn value) onSignIn,
+  }) {
+    return onInit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnInit value)? onInit,
+    TResult? Function(_OnPageView value)? onPageView,
+    TResult? Function(_OnGetStarted value)? onGetStarted,
+    TResult? Function(_OnSignIn value)? onSignIn,
+  }) {
+    return onInit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnInit value)? onInit,
+    TResult Function(_OnPageView value)? onPageView,
+    TResult Function(_OnGetStarted value)? onGetStarted,
+    TResult Function(_OnSignIn value)? onSignIn,
+    required TResult orElse(),
+  }) {
+    if (onInit != null) {
+      return onInit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnInit implements WellComeEvent {
+  const factory _OnInit() = _$OnInitImpl;
+}
+
+/// @nodoc
 abstract class _$$OnPageViewImplCopyWith<$Res> {
   factory _$$OnPageViewImplCopyWith(
           _$OnPageViewImpl value, $Res Function(_$OnPageViewImpl) then) =
       __$$OnPageViewImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int index});
+  $Res call({int position});
 }
 
 /// @nodoc
@@ -99,12 +228,12 @@ class __$$OnPageViewImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? index = null,
+    Object? position = null,
   }) {
     return _then(_$OnPageViewImpl(
-      null == index
-          ? _value.index
-          : index // ignore: cast_nullable_to_non_nullable
+      null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -113,14 +242,14 @@ class __$$OnPageViewImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OnPageViewImpl implements _OnPageView {
-  const _$OnPageViewImpl(this.index);
+  const _$OnPageViewImpl(this.position);
 
   @override
-  final int index;
+  final int position;
 
   @override
   String toString() {
-    return 'WellComeEvent.onPageView(index: $index)';
+    return 'WellComeEvent.onPageView(position: $position)';
   }
 
   @override
@@ -128,11 +257,12 @@ class _$OnPageViewImpl implements _OnPageView {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OnPageViewImpl &&
-            (identical(other.index, index) || other.index == index));
+            (identical(other.position, position) ||
+                other.position == position));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, index);
+  int get hashCode => Object.hash(runtimeType, position);
 
   /// Create a copy of WellComeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -145,30 +275,36 @@ class _$OnPageViewImpl implements _OnPageView {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int index) onPageView,
-    required TResult Function(String router) onNavigate,
+    required TResult Function() onInit,
+    required TResult Function(int position) onPageView,
+    required TResult Function() onGetStarted,
+    required TResult Function() onSignIn,
   }) {
-    return onPageView(index);
+    return onPageView(position);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int index)? onPageView,
-    TResult? Function(String router)? onNavigate,
+    TResult? Function()? onInit,
+    TResult? Function(int position)? onPageView,
+    TResult? Function()? onGetStarted,
+    TResult? Function()? onSignIn,
   }) {
-    return onPageView?.call(index);
+    return onPageView?.call(position);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int index)? onPageView,
-    TResult Function(String router)? onNavigate,
+    TResult Function()? onInit,
+    TResult Function(int position)? onPageView,
+    TResult Function()? onGetStarted,
+    TResult Function()? onSignIn,
     required TResult orElse(),
   }) {
     if (onPageView != null) {
-      return onPageView(index);
+      return onPageView(position);
     }
     return orElse();
   }
@@ -176,8 +312,10 @@ class _$OnPageViewImpl implements _OnPageView {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_OnInit value) onInit,
     required TResult Function(_OnPageView value) onPageView,
-    required TResult Function(_OnNavigate value) onNavigate,
+    required TResult Function(_OnGetStarted value) onGetStarted,
+    required TResult Function(_OnSignIn value) onSignIn,
   }) {
     return onPageView(this);
   }
@@ -185,8 +323,10 @@ class _$OnPageViewImpl implements _OnPageView {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnInit value)? onInit,
     TResult? Function(_OnPageView value)? onPageView,
-    TResult? Function(_OnNavigate value)? onNavigate,
+    TResult? Function(_OnGetStarted value)? onGetStarted,
+    TResult? Function(_OnSignIn value)? onSignIn,
   }) {
     return onPageView?.call(this);
   }
@@ -194,8 +334,10 @@ class _$OnPageViewImpl implements _OnPageView {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnInit value)? onInit,
     TResult Function(_OnPageView value)? onPageView,
-    TResult Function(_OnNavigate value)? onNavigate,
+    TResult Function(_OnGetStarted value)? onGetStarted,
+    TResult Function(_OnSignIn value)? onSignIn,
     required TResult orElse(),
   }) {
     if (onPageView != null) {
@@ -206,9 +348,9 @@ class _$OnPageViewImpl implements _OnPageView {
 }
 
 abstract class _OnPageView implements WellComeEvent {
-  const factory _OnPageView(final int index) = _$OnPageViewImpl;
+  const factory _OnPageView(final int position) = _$OnPageViewImpl;
 
-  int get index;
+  int get position;
 
   /// Create a copy of WellComeEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -218,97 +360,76 @@ abstract class _OnPageView implements WellComeEvent {
 }
 
 /// @nodoc
-abstract class _$$OnNavigateImplCopyWith<$Res> {
-  factory _$$OnNavigateImplCopyWith(
-          _$OnNavigateImpl value, $Res Function(_$OnNavigateImpl) then) =
-      __$$OnNavigateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String router});
+abstract class _$$OnGetStartedImplCopyWith<$Res> {
+  factory _$$OnGetStartedImplCopyWith(
+          _$OnGetStartedImpl value, $Res Function(_$OnGetStartedImpl) then) =
+      __$$OnGetStartedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OnNavigateImplCopyWithImpl<$Res>
-    extends _$WellComeEventCopyWithImpl<$Res, _$OnNavigateImpl>
-    implements _$$OnNavigateImplCopyWith<$Res> {
-  __$$OnNavigateImplCopyWithImpl(
-      _$OnNavigateImpl _value, $Res Function(_$OnNavigateImpl) _then)
+class __$$OnGetStartedImplCopyWithImpl<$Res>
+    extends _$WellComeEventCopyWithImpl<$Res, _$OnGetStartedImpl>
+    implements _$$OnGetStartedImplCopyWith<$Res> {
+  __$$OnGetStartedImplCopyWithImpl(
+      _$OnGetStartedImpl _value, $Res Function(_$OnGetStartedImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of WellComeEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? router = null,
-  }) {
-    return _then(_$OnNavigateImpl(
-      null == router
-          ? _value.router
-          : router // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$OnNavigateImpl implements _OnNavigate {
-  const _$OnNavigateImpl(this.router);
-
-  @override
-  final String router;
+class _$OnGetStartedImpl implements _OnGetStarted {
+  const _$OnGetStartedImpl();
 
   @override
   String toString() {
-    return 'WellComeEvent.onNavigate(router: $router)';
+    return 'WellComeEvent.onGetStarted()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OnNavigateImpl &&
-            (identical(other.router, router) || other.router == router));
+        (other.runtimeType == runtimeType && other is _$OnGetStartedImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, router);
-
-  /// Create a copy of WellComeEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OnNavigateImplCopyWith<_$OnNavigateImpl> get copyWith =>
-      __$$OnNavigateImplCopyWithImpl<_$OnNavigateImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int index) onPageView,
-    required TResult Function(String router) onNavigate,
+    required TResult Function() onInit,
+    required TResult Function(int position) onPageView,
+    required TResult Function() onGetStarted,
+    required TResult Function() onSignIn,
   }) {
-    return onNavigate(router);
+    return onGetStarted();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int index)? onPageView,
-    TResult? Function(String router)? onNavigate,
+    TResult? Function()? onInit,
+    TResult? Function(int position)? onPageView,
+    TResult? Function()? onGetStarted,
+    TResult? Function()? onSignIn,
   }) {
-    return onNavigate?.call(router);
+    return onGetStarted?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int index)? onPageView,
-    TResult Function(String router)? onNavigate,
+    TResult Function()? onInit,
+    TResult Function(int position)? onPageView,
+    TResult Function()? onGetStarted,
+    TResult Function()? onSignIn,
     required TResult orElse(),
   }) {
-    if (onNavigate != null) {
-      return onNavigate(router);
+    if (onGetStarted != null) {
+      return onGetStarted();
     }
     return orElse();
   }
@@ -316,45 +437,160 @@ class _$OnNavigateImpl implements _OnNavigate {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_OnInit value) onInit,
     required TResult Function(_OnPageView value) onPageView,
-    required TResult Function(_OnNavigate value) onNavigate,
+    required TResult Function(_OnGetStarted value) onGetStarted,
+    required TResult Function(_OnSignIn value) onSignIn,
   }) {
-    return onNavigate(this);
+    return onGetStarted(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnInit value)? onInit,
     TResult? Function(_OnPageView value)? onPageView,
-    TResult? Function(_OnNavigate value)? onNavigate,
+    TResult? Function(_OnGetStarted value)? onGetStarted,
+    TResult? Function(_OnSignIn value)? onSignIn,
   }) {
-    return onNavigate?.call(this);
+    return onGetStarted?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnInit value)? onInit,
     TResult Function(_OnPageView value)? onPageView,
-    TResult Function(_OnNavigate value)? onNavigate,
+    TResult Function(_OnGetStarted value)? onGetStarted,
+    TResult Function(_OnSignIn value)? onSignIn,
     required TResult orElse(),
   }) {
-    if (onNavigate != null) {
-      return onNavigate(this);
+    if (onGetStarted != null) {
+      return onGetStarted(this);
     }
     return orElse();
   }
 }
 
-abstract class _OnNavigate implements WellComeEvent {
-  const factory _OnNavigate(final String router) = _$OnNavigateImpl;
+abstract class _OnGetStarted implements WellComeEvent {
+  const factory _OnGetStarted() = _$OnGetStartedImpl;
+}
 
-  String get router;
+/// @nodoc
+abstract class _$$OnSignInImplCopyWith<$Res> {
+  factory _$$OnSignInImplCopyWith(
+          _$OnSignInImpl value, $Res Function(_$OnSignInImpl) then) =
+      __$$OnSignInImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnSignInImplCopyWithImpl<$Res>
+    extends _$WellComeEventCopyWithImpl<$Res, _$OnSignInImpl>
+    implements _$$OnSignInImplCopyWith<$Res> {
+  __$$OnSignInImplCopyWithImpl(
+      _$OnSignInImpl _value, $Res Function(_$OnSignInImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of WellComeEvent
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OnNavigateImplCopyWith<_$OnNavigateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+
+class _$OnSignInImpl implements _OnSignIn {
+  const _$OnSignInImpl();
+
+  @override
+  String toString() {
+    return 'WellComeEvent.onSignIn()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OnSignInImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() onInit,
+    required TResult Function(int position) onPageView,
+    required TResult Function() onGetStarted,
+    required TResult Function() onSignIn,
+  }) {
+    return onSignIn();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? onInit,
+    TResult? Function(int position)? onPageView,
+    TResult? Function()? onGetStarted,
+    TResult? Function()? onSignIn,
+  }) {
+    return onSignIn?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? onInit,
+    TResult Function(int position)? onPageView,
+    TResult Function()? onGetStarted,
+    TResult Function()? onSignIn,
+    required TResult orElse(),
+  }) {
+    if (onSignIn != null) {
+      return onSignIn();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_OnInit value) onInit,
+    required TResult Function(_OnPageView value) onPageView,
+    required TResult Function(_OnGetStarted value) onGetStarted,
+    required TResult Function(_OnSignIn value) onSignIn,
+  }) {
+    return onSignIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_OnInit value)? onInit,
+    TResult? Function(_OnPageView value)? onPageView,
+    TResult? Function(_OnGetStarted value)? onGetStarted,
+    TResult? Function(_OnSignIn value)? onSignIn,
+  }) {
+    return onSignIn?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_OnInit value)? onInit,
+    TResult Function(_OnPageView value)? onPageView,
+    TResult Function(_OnGetStarted value)? onGetStarted,
+    TResult Function(_OnSignIn value)? onSignIn,
+    required TResult orElse(),
+  }) {
+    if (onSignIn != null) {
+      return onSignIn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnSignIn implements WellComeEvent {
+  const factory _OnSignIn() = _$OnSignInImpl;
 }
 
 /// @nodoc

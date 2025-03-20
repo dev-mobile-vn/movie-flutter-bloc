@@ -4,7 +4,6 @@ import 'package:movie/core/common/resource/app_assets.dart';
 import 'package:movie/core/common/widgets/custom_button.dart';
 import 'package:movie/di/dependency_injection.dart';
 import '../../core/bloc/page_command.dart';
-import '../../core/common/constant/routers.dart';
 import '../../core/common/translations/l10n.dart';
 import 'bloc/well_come_bloc.dart';
 
@@ -113,7 +112,7 @@ class WellComeScreen extends StatelessWidget {
                               ),
                               onPressed: () => context
                                   .read<WellComeBloc>()
-                                  .add(WellComeEvent.onNavigate(mainRoute)),
+                                  .add(WellComeEvent.onGetStarted()),
                               child: Text(S.of(context).btn_get_started),
                             ),
                           ),
@@ -126,7 +125,7 @@ class WellComeScreen extends StatelessWidget {
                               btnText: S.current.txt_sign_in,
                               action: () => context
                                   .read<WellComeBloc>()
-                                  .add(WellComeEvent.onNavigate(loginRoute)),
+                                  .add(WellComeEvent.onSignIn()),
                             ),
                           ),
                         ],
