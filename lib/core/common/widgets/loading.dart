@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:movie/core/cubit/app_cubit.dart';
+import 'package:movie/di/dependency_injection.dart';
 
 class Loading extends StatelessWidget {
   final double size;
@@ -14,7 +16,9 @@ class Loading extends StatelessWidget {
       canPop: false,
       child: Center(
         child: LoadingAnimationWidget.hexagonDots(
-          color: Theme.of(context).primaryColor,
+          color: getIt<AppCubit>().state.isDarkMode
+              ? Colors.white
+              : Theme.of(context).primaryColor,
           size: size,
         ),
       ),

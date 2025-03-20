@@ -26,7 +26,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider(create: (_) => getIt.get<AppCubit>()..getLocale()..getDarkMode()),
+          BlocProvider(
+            create: (_) => getIt.get<AppCubit>()
+              ..getLocale()
+              ..getDarkMode(),
+          ),
           BlocProvider<HomeCubit>.value(value: getIt<HomeCubit>()),
           BlocProvider(create: (_) => getIt.get<ProfileBloc>()),
         ],

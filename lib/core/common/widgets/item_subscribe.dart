@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../core/common/resource/icons.dart';
 import '../../../core/common/translations/l10n.dart';
 import '../../../core/common/widgets/svg_widget.dart';
+import '../../../di/dependency_injection.dart';
+import '../../cubit/app_cubit.dart';
 
 class ItemSubscribe extends StatelessWidget {
   final String price;
@@ -37,15 +39,17 @@ class ItemSubscribe extends StatelessWidget {
                 TextSpan(
                   text: '\$$price ',
                   style: Theme.of(context).textTheme.displayLarge!.copyWith(
-                        color: Color(0xff000000),
+                        color: getIt<AppCubit>().state.isDarkMode
+                            ? Colors.white
+                            : Color(0xff000000),
                       ),
                 ),
                 TextSpan(
                   text: '/$time',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .copyWith(color: Color(0xff616161)),
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: getIt<AppCubit>().state.isDarkMode
+                          ? Colors.white
+                          : Color(0xff616161)),
                 )
               ])),
             ),
@@ -84,7 +88,9 @@ class RowItemSubscribe extends StatelessWidget {
         children: [
           Icon(
             Icons.check,
-            color: Theme.of(context).colorScheme.primary,
+            color: getIt<AppCubit>().state.isDarkMode
+                ? Colors.white
+                : Theme.of(context).colorScheme.primary,
             size: 22,
           ),
           SizedBox(

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:movie/core/common/constant/routers.dart';
 import '../../../core/common/translations/l10n.dart';
 import '../../../core/common/widgets/item_subscribe.dart';
+import '../../../core/cubit/app_cubit.dart';
+import '../../../di/dependency_injection.dart';
 import '../../confirm_payment/confirm_payment_screen.dart';
 
 class SubscribeView extends StatelessWidget {
@@ -27,10 +29,10 @@ class SubscribeView extends StatelessWidget {
               child: Text(
                 S.of(context).content_subscribe_to_premium,
                 textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(color: Color(0xff424242)),
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    color: getIt<AppCubit>().state.isDarkMode
+                        ? Colors.white
+                        : Color(0xff424242)),
               ),
             ),
             ItemSubscribe(

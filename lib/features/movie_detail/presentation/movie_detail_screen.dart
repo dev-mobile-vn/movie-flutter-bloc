@@ -9,6 +9,7 @@ import '../../../core/common/widgets/image_widget.dart';
 import '../../../core/common/widgets/loading.dart';
 import '../../../core/common/widgets/svg_widget.dart';
 import '../../../core/config/network_constants.dart';
+import '../../../core/cubit/app_cubit.dart';
 import 'bloc/movie_detail_bloc_cubit.dart';
 import 'widgets/content_view.dart';
 import 'widgets/reviews_view.dart';
@@ -24,7 +25,8 @@ class MovieDetailScreen extends StatefulWidget {
   State<MovieDetailScreen> createState() => _MovieDetailScreenState();
 }
 
-class _MovieDetailScreenState extends State<MovieDetailScreen> with TickerProviderStateMixin {
+class _MovieDetailScreenState extends State<MovieDetailScreen>
+    with TickerProviderStateMixin {
   late TabController _tabController;
   late String id;
   MovieDetailBlocCubit cubit = getIt.get<MovieDetailBlocCubit>();
@@ -54,9 +56,12 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> with TickerProvid
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor:
+          getIt<AppCubit>().state.isDarkMode ? Colors.black : Colors.white,
       body: BlocProvider<MovieDetailBlocCubit>(
-        create: (context) => cubit..getDetailMovie(id)..getTrailers(id),
+        create: (context) => cubit
+          ..getDetailMovie(id)
+          ..getTrailers(id),
         child: BlocConsumer<MovieDetailBlocCubit, MovieDetailState>(
           buildWhen: (previous, current) => previous.movie != current.movie,
           listener: (context, state) {},
@@ -95,23 +100,32 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> with TickerProvid
                                 child: Icon(
                                   Icons.arrow_back_ios,
                                   color: size.scrollOffset > 100
-                                      ? Colors.black
+                                      ? getIt<AppCubit>().state.isDarkMode
+                                      ? Colors.white
+                                      : Colors.black
                                       : Colors.white,
                                 ),
                               ),
                               toolbarHeight: 50,
                               backgroundColor: Color.lerp(
                                   Colors.transparent,
-                                  Colors.white,
+                                  getIt<AppCubit>().state.isDarkMode
+                                      ? null
+                                      : Colors.white,
                                   _calculateOffset(size.scrollOffset)));
                         })
                       ]),
                       SliverToBoxAdapter(
-                        child: ContentView(movie: movie, cubit: cubit,),
+                        child: ContentView(
+                          movie: movie,
+                          cubit: cubit,
+                        ),
                       ),
                       SliverPinnedHeader(
                           child: Material(
-                        color: Colors.white,
+                        color: getIt<AppCubit>().state.isDarkMode
+                            ? Colors.black
+                            : Colors.white,
                         child: Stack(
                           children: [
                             const Positioned(
@@ -125,7 +139,7 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> with TickerProvid
                                 onTap: (index) {
                                   switch (index) {
                                     case 0:
-                                     cubit.getTrailers(id);
+                                      cubit.getTrailers(id);
                                       break;
                                     case 1:
                                       cubit.getListMovieSimilar(id);
@@ -144,12 +158,13 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> with TickerProvid
                                         ? TabAlignment.center
                                         : null,
                                 controller: _tabController,
-                                tabs:  [
+                                tabs: [
                                   Tab(
                                     child: Text(S.of(context).tab_trailers),
                                   ),
                                   Tab(
-                                    child: Text(S.of(context).tab_similar_movies),
+                                    child:
+                                        Text(S.of(context).tab_similar_movies),
                                   ),
                                   Tab(
                                     child: Text(S.of(context).tab_comments),
@@ -164,9 +179,14 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> with TickerProvid
                       controller: _tabController,
                       physics: const NeverScrollableScrollPhysics(),
                       children: [
-                        TrailersView(cubit: cubit,),
+                        TrailersView(
+                          cubit: cubit,
+                        ),
                         SimilarMoviesView(id: id, cubit: cubit),
-                        ReviewsView(id: id, cubit: cubit,),
+                        ReviewsView(
+                          id: id,
+                          cubit: cubit,
+                        ),
                       ])),
             );
           },
@@ -175,4 +195,3 @@ class _MovieDetailScreenState extends State<MovieDetailScreen> with TickerProvid
     );
   }
 }
-
