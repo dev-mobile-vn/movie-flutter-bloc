@@ -5,7 +5,9 @@ import '../../../../core/common/constant/routers.dart';
 import '../../../../core/common/translations/l10n.dart';
 import '../../../../core/common/utils/times_utils.dart';
 import '../../../../core/common/widgets/svg_widget.dart';
+import '../../../../core/cubit/app_cubit.dart';
 import '../../../../core/data/model/movie_model.dart';
+import '../../../../di/dependency_injection.dart';
 import '../../../watch_video/watch_video_screen.dart';
 import '../bloc/movie_detail_bloc_cubit.dart';
 
@@ -46,13 +48,16 @@ class ContentView extends StatelessWidget {
                       ic: state.isBookMark
                           ? 'assets/icons/ic_book_mark.svg'
                           : 'assets/icons/ic_my_list.svg',
-                      color: Colors.red,
+                      color: getIt<AppCubit>().state.isDarkMode
+                          ? Colors.white
+                          : null,
                     );
                   },
                 ),
               ),
-              const SvgWidget(
+              SvgWidget(
                 ic: 'assets/icons/ic_share.svg',
+                color: getIt<AppCubit>().state.isDarkMode ? Colors.white : null,
               ),
             ],
           ),
@@ -72,17 +77,19 @@ class ContentView extends StatelessWidget {
               ),
               Text(
                 '${movie?.voteAverage?.toStringAsFixed(1)}',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(color: Theme.of(context).primaryColor),
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    color: getIt<AppCubit>().state.isDarkMode
+                        ? Colors.white
+                        : Theme.of(context).primaryColor),
               ),
               const SizedBox(
                 width: 4,
               ),
               Icon(
                 Icons.arrow_forward_ios_rounded,
-                color: Theme.of(context).primaryColor,
+                color: getIt<AppCubit>().state.isDarkMode
+                    ? Colors.white
+                    : Theme.of(context).primaryColor,
                 size: 14,
               ),
               const SizedBox(
@@ -99,11 +106,17 @@ class ContentView extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
                     border: Border.all(
-                        color: Theme.of(context).primaryColor, width: 1)),
+                        color: getIt<AppCubit>().state.isDarkMode
+                            ? Colors.white
+                            : Theme.of(context).primaryColor,
+                        width: 1)),
                 child: Text(
                   '13+',
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      fontSize: 14, color: Theme.of(context).primaryColor),
+                      fontSize: 14,
+                      color: getIt<AppCubit>().state.isDarkMode
+                          ? Colors.white
+                          : Theme.of(context).primaryColor),
                 ),
               ),
               Row(
@@ -115,7 +128,9 @@ class ContentView extends StatelessWidget {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(4),
                               border: Border.all(
-                                  color: Theme.of(context).primaryColor,
+                                  color: getIt<AppCubit>().state.isDarkMode
+                                      ? Colors.white
+                                      : Theme.of(context).primaryColor,
                                   width: 1)),
                           child: Text(
                             item,
@@ -124,7 +139,9 @@ class ContentView extends StatelessWidget {
                                 .bodyMedium!
                                 .copyWith(
                                     fontSize: 14,
-                                    color: Theme.of(context).primaryColor),
+                                    color: getIt<AppCubit>().state.isDarkMode
+                                        ? Colors.white
+                                        : Theme.of(context).primaryColor),
                           ),
                         ))
                     .toList(),

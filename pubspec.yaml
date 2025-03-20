@@ -35,6 +35,7 @@ dependencies:
   sqflite:
   flutter_dotenv: ^5.2.1
   path: ^1.9.0
+  flutter_stripe: ^11.4.0
 
 dev_dependencies:
   flutter_test:

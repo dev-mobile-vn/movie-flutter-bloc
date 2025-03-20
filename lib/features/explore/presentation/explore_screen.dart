@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie/core/common/widgets/svg_widget.dart';
+import 'package:movie/core/cubit/app_cubit.dart';
 import 'package:movie/di/dependency_injection.dart';
 import '../../../../../core/bloc/page_state.dart';
 import '../../../../../core/common/translations/l10n.dart';
@@ -43,7 +44,9 @@ class ExploreScreen extends StatelessWidget {
                                   .textTheme
                                   .titleLarge!
                                   .copyWith(
-                                    color: Theme.of(context).primaryColor,
+                                    color: getIt<AppCubit>().state.isDarkMode
+                                        ? Colors.white
+                                        : Theme.of(context).primaryColor,
                                     fontSize: 24,
                                   ),
                             ),
@@ -58,7 +61,9 @@ class ExploreScreen extends StatelessWidget {
                                   .textTheme
                                   .bodyMedium
                                   ?.copyWith(
-                                    color: Color(0xff424242),
+                                    color: getIt<AppCubit>().state.isDarkMode
+                                        ? Colors.white
+                                        : Color(0xff424242),
                                   ),
                             ),
                           ),

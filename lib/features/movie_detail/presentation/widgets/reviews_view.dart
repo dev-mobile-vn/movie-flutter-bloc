@@ -7,6 +7,8 @@ import '../../../../core/bloc/page_state.dart';
 import '../../../../core/common/constant/routers.dart';
 import '../../../../core/common/widgets/svg_widget.dart';
 import '../../../../core/config/network_constants.dart';
+import '../../../../core/cubit/app_cubit.dart';
+import '../../../../di/dependency_injection.dart';
 import '../bloc/movie_detail_bloc_cubit.dart';
 
 class ReviewsView extends StatelessWidget {
@@ -34,7 +36,10 @@ class ReviewsView extends StatelessWidget {
                     ),
                     Text(
                       '${state.reviews?.totalResults} Comments',
-                      style: context.titleMedium,
+                      style: context.titleMedium.copyWith(
+                          color: getIt<AppCubit>().state.isDarkMode
+                              ? Colors.white
+                              : Colors.black),
                     ),
                     const Spacer(),
                     GestureDetector(
@@ -43,8 +48,10 @@ class ReviewsView extends StatelessWidget {
                           arguments: id),
                       child: Text(
                         'See all',
-                        style: context.bodyMedium
-                            .copyWith(color: Theme.of(context).primaryColor),
+                        style: context.bodyMedium.copyWith(
+                            color: getIt<AppCubit>().state.isDarkMode
+                                ? Colors.white
+                                : Theme.of(context).primaryColor),
                       ),
                     ),
                     const SizedBox(
@@ -76,12 +83,20 @@ class ReviewsView extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(item.author, style: context.labelMedium),
+                                Text(item.author,
+                                    style: context.labelMedium.copyWith(
+                                        color:
+                                            getIt<AppCubit>().state.isDarkMode
+                                                ? Colors.white
+                                                : Colors.black)),
                                 Text(
                                   item.content,
                                   maxLines: 2,
                                   style: context.bodyMedium.copyWith(
                                       overflow: TextOverflow.ellipsis,
+                                      color: getIt<AppCubit>().state.isDarkMode
+                                          ? Colors.white
+                                          : Colors.black,
                                       fontSize: 12),
                                 ),
                                 const SizedBox(
@@ -93,7 +108,9 @@ class ReviewsView extends StatelessWidget {
                                       ic: index % 2 == 0
                                           ? "assets/icons/ic_love.svg"
                                           : 'assets/icons/ic_heart.svg',
-                                      color: Theme.of(context).primaryColor,
+                                      color: getIt<AppCubit>().state.isDarkMode
+                                          ? Colors.white
+                                          : Theme.of(context).primaryColor,
                                     ),
                                     const SizedBox(
                                       width: 4,
@@ -101,7 +118,11 @@ class ReviewsView extends StatelessWidget {
                                     Text(
                                       '200',
                                       style: context.bodySmall.copyWith(
-                                          fontSize: 12, color: Colors.grey),
+                                          fontSize: 12,
+                                          color:
+                                              getIt<AppCubit>().state.isDarkMode
+                                                  ? Colors.white
+                                                  : Colors.grey),
                                     ),
                                     const SizedBox(
                                       width: 20,
@@ -109,7 +130,11 @@ class ReviewsView extends StatelessWidget {
                                     Text(
                                       '2 days ago',
                                       style: context.bodySmall.copyWith(
-                                          fontSize: 12, color: Colors.grey),
+                                          fontSize: 12,
+                                          color:
+                                              getIt<AppCubit>().state.isDarkMode
+                                                  ? Colors.white
+                                                  : Colors.grey),
                                     ),
                                     const SizedBox(
                                       width: 20,
@@ -117,7 +142,11 @@ class ReviewsView extends StatelessWidget {
                                     Text(
                                       'Reply',
                                       style: context.bodySmall.copyWith(
-                                          fontSize: 12, color: Colors.grey),
+                                          fontSize: 12,
+                                          color:
+                                              getIt<AppCubit>().state.isDarkMode
+                                                  ? Colors.white
+                                                  : Colors.grey),
                                     ),
                                   ],
                                 )

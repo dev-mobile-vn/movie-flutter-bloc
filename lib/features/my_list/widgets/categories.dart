@@ -37,7 +37,7 @@ class Categories extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             color: categoryType == item
                                 ? Colors.white
-                                : null,
+                                : Colors.black,
                           ),
                     ),
                   ),

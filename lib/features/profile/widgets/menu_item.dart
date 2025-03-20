@@ -33,7 +33,10 @@ class MenuItem extends StatelessWidget {
             builder: (context, state) {
               return Row(
                 children: [
-                  SvgWidget(ic: icLeft),
+                  SvgWidget(
+                    ic: icLeft,
+                    color: state.isDarkMode ? Colors.white : null,
+                  ),
                   const SizedBox(width: 16),
                   Text(
                     title,
@@ -89,7 +92,11 @@ class MenuItem extends StatelessWidget {
                             shape: BoxShape.circle),
                       ),
                     ),
-                  if (type != MenuType.darkMode) SvgWidget(ic: icArrowRight),
+                  if (type != MenuType.darkMode)
+                    SvgWidget(
+                      ic: icArrowRight,
+                      color: state.isDarkMode ? Colors.white : null,
+                    ),
                 ],
               );
             },

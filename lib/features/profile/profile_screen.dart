@@ -7,6 +7,7 @@ import '../../../../core/common/widgets/svg_widget.dart';
 import '../../../../di/dependency_injection.dart';
 import 'bloc/profile_bloc.dart';
 import 'widgets/menu_item.dart';
+import 'widgets/subcribe_premium.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -44,7 +45,7 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(
                 height: 24,
               ),
-              //const SubscribePremium(),
+              const SubscribePremium(),
               const SizedBox(
                 height: 4,
               ),
