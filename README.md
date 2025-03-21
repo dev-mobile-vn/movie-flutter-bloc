@@ -42,6 +42,19 @@ Run the following commands from your terminal:
   </tbody>
 </table>
 
+## Screenshots dark mode
+
+<table width="100%">
+  <tbody>
+    <tr>
+      <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/2.png"/></td>
+      <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/3.png"/></td>
+      <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/4.png"/></td>
+        <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/1.png"/></td>
+    </tr>
+  </tbody>
+</table>
+
 ## Video 
 [Play movie](https://youtu.be/PvvRz4UFN1w)
 
