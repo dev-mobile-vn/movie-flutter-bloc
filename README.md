@@ -23,19 +23,17 @@ Run the following commands from your terminal:
       <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/wellcome.png"/></td>
       <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/login.png"/></td>
       <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/login2.png"/></td>
+       <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/home.png"/></td>
     </tr>
     <tr>
-      <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/home.png"/></td>
       <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/upcoming.png"/></td>
       <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/detail.png"/></td>
+        <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/detail2.png"/></td>
+     <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/profile.png"/></td>
     </tr>
     <tr>
-     <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/detail2.png"/></td>
-     <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/profile.png"/></td>
      <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/edit_profile.png"/></td>
-    </tr>
-     <tr>
-     <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/sub.png"/></td>
+       <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/sub.png"/></td>
      <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/payment.png"/></td>
      <td width="1%"><img src="https://raw.githubusercontent.com/dev-mobile-vn/movie-flutter-bloc/refs/heads/master/assets/screenshots/review.png"/></td>
     </tr>
