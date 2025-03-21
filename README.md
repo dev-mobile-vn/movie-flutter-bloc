@@ -79,7 +79,7 @@ Run the following commands from your terminal:
 
   
 ## Contact Me
-[![LinkedIn]([https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/enesakbl/](https://www.linkedin.com/in/truong-pham-57080a2b7))
+[!LinkedIn](www.linkedin.com/in/truong-pham-57080a2b7)
 
 ### License
 Copyright (C) 2024 Truong Pham
