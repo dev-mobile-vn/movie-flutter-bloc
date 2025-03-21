@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie/core/common/widgets/image_widget.dart';
+import 'package:movie/core/common/resource/app_assets.dart';
 import 'package:movie/features/add_card/bloc/add_card_bloc.dart';
 import '../../core/common/resource/icons.dart';
 import '../../core/common/translations/l10n.dart';
@@ -19,7 +19,6 @@ class AddCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bloc = getIt.get<AddCardBloc>();
-
     return BlocProvider<AddCardBloc>(
       create: (context) => bloc,
       child: BlocListener<AddCardBloc, AddCardState>(
@@ -50,30 +49,20 @@ class AddCardScreen extends StatelessWidget {
                     Column(
                       children: [
                         Image.asset(
-                          'assets/icons/ic_card_account.png',
+                          AppAssets.ic_card_account_png,
                           width: double.infinity,
                           height: 224,
                         ),
                         Divider(),
                       ],
                     ),
-                    CardNameInput(
-                      bloc: bloc,
-                    ),
-                    CardNumberInput(
-                      bloc: bloc,
-                    ),
+                    CardNameInput(),
+                    CardNumberInput(),
                     Row(
                       spacing: 8,
                       children: [
-                        Expanded(
-                            child: ExpiryDateInput(
-                          bloc: bloc,
-                        )),
-                        Expanded(
-                            child: CvvCardInput(
-                          bloc: bloc,
-                        )),
+                        Expanded(child: ExpiryDateInput()),
+                        Expanded(child: CvvCardInput()),
                       ],
                     ),
                   ],
