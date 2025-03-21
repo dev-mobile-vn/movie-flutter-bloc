@@ -79,7 +79,7 @@ Run the following commands from your terminal:
 
   
 ## Contact Me
-[!LinkedIn](www.linkedin.com/in/truong-pham-57080a2b7)
+[!LinkedIn](https://www.linkedin.com/in/truong-pham-57080a2b7/)
 
 ### License
 Copyright (C) 2024 Truong Pham
