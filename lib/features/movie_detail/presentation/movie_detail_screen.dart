@@ -7,7 +7,6 @@ import '../../../core/bloc/page_state.dart';
 import '../../../core/common/translations/l10n.dart';
 import '../../../core/common/widgets/image_widget.dart';
 import '../../../core/common/widgets/loading.dart';
-import '../../../core/common/widgets/svg_widget.dart';
 import '../../../core/config/network_constants.dart';
 import '../../../core/cubit/app_cubit.dart';
 import 'bloc/movie_detail_bloc_cubit.dart';
@@ -64,7 +63,9 @@ class _MovieDetailScreenState extends State<MovieDetailScreen>
           ..getTrailers(id),
         child: BlocConsumer<MovieDetailBlocCubit, MovieDetailState>(
           buildWhen: (previous, current) => previous.movie != current.movie,
-          listener: (context, state) {},
+          listener: (context, state) {
+
+          },
           builder: (context, state) {
             if (state.status == PageState.loading) {
               return const Loading();

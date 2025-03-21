@@ -50,7 +50,7 @@ class LocalDatabase {
   Future<List<MovieLocal>> getAllMovies() async {
     List<Map> data = await db.query(
       tableMovie,
-      columns: [columnId, columnTitle, columnUrl],
+      columns: [columnId, columnTitle, columnUrl, columnVote],
     );
     if (data.isNotEmpty) {
       return data
