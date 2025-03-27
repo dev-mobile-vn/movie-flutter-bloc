@@ -77,6 +77,8 @@ Run the following commands from your terminal:
 ## 
 - flutter pub run build_runner build --delete-conflicting-outputs
 
+### Support Me
+<a href="https://www.buymeacoffee.com/AmirBayat"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="200" /></a>
   
 ## Contact Me
 [!LinkedIn](https://www.linkedin.com/in/truong-pham-57080a2b7/)
